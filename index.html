@@ -1,0 +1,28 @@
+<html>
+<script src="./script.js"></script>
+<script>
+
+    function convertToPDF() {
+        // const pdfFile = document.getElementById('pdfFile');
+        pdfUtil.pdfToText(pdfPath, (err, data) => {
+            if (err) throw (err);
+            document.getElementById('pdfText').innerHTML = data;
+        })
+
+    }</script>
+
+<head>
+    <title>PDF To Text</title>
+</head>
+
+<body>
+    <div>
+        <input type="file" accept="pdf" id="pdfFile" />
+        <button onclick="convertToPDF()">Covert To Text</button>
+    </div>
+    <div id="pdfText">
+
+    </div>
+</body>
+
+</html>
